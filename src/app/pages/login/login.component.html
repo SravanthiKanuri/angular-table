@@ -1,0 +1,48 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="80">
+      <h4>Create Product</h4>
+      <form [formGroup]="loginForm" (submit)="onSubmit($event)">
+          <mat-form-field class="example-full-width" fxFlexFill>
+              <mat-label>Title</mat-label>
+              <input type="text" matInput formControlName="title" placeholder="Enter title here">
+              <mat-error *ngIf="loginForm.get('title')?.errors?.['required']">
+                  Title is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('title')?.errors?.['minlength']">
+                  Title should be 5 char
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('title')?.errors?.['maxlength']">
+                Title should not exceed 20 char
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-radio-group formControlName="completed" aria-label="Select an option">
+            <mat-radio-button [value]="true">Completed</mat-radio-button>
+            <mat-radio-button [value]="false">Incomplete</mat-radio-button>
+            <mat-error *ngIf="loginForm.get('completed')?.errors?.['required']">
+            Please click any one option
+          </mat-error>
+          </mat-radio-group>
+
+
+          <mat-form-field appearance="fill" fxFlexFill>
+            <mat-label>Target date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="target">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="loginForm.get('target')?.errors?.['required']">
+              date is required
+          </mat-error>
+          </mat-form-field>
+          
+          <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+              <button mat-raised-button type="submit" color="primary">Submit</button>
+
+          </div>
+
+      </form>
+  </div>
+
+</div>

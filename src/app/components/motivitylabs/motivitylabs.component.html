@@ -1,0 +1,97 @@
+<div style="height: 100vh;">
+    <div style="width: 30vw;" fxFlex="20" class="form-layout">
+
+        <form [formGroup]="businessForm" class="form-buniness">
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Company Name</mat-label>
+                <input type="text" [(ngModel)]="business.companyName" matInput formControlName="companyName"
+                    placeholder="Enter Name here" />
+                <mat-error *ngIf="businessForm.get('companyName')?.errors?.['required']">
+                    Company Name is required
+                </mat-error>
+                <mat-error *ngIf="businessForm.get('companyName')?.errors?.['minlength']">
+                    Min 5 Char
+                </mat-error>
+                <mat-error *ngIf="businessForm.get('companyName')?.errors?.['maxlength']">
+                    Max 10 Char
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>tagline</mat-label>
+                <input type="text" matInput [(ngModel)]="business.tagline" formControlName="tagline"
+                    placeholder="Enter tagline here" />
+                <mat-error *ngIf="businessForm.get('tagline')?.errors?.['required']">
+                    tagline is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Name</mat-label>
+                <input type="text" [(ngModel)]="business.name" matInput formControlName="name"
+                    placeholder="Enter phonenumber here" />
+                <mat-error *ngIf="businessForm.get('name')?.errors?.['required']">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Designation</mat-label>
+                <input type="text" [(ngModel)]="business.designation" matInput formControlName="designation"
+                    placeholder="Enter designation here" />
+                <mat-error *ngIf="businessForm.get('designation')?.errors?.['required']">
+                    designation is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>phoneNumber</mat-label>
+                <input type="text" [(ngModel)]="business.phoneNumber" matInput formControlName="phoneNumber"
+                    placeholder="Enter phoneNumber here" />
+                <mat-error *ngIf="businessForm.get('phoneNumber')?.errors?.['required']">
+                    phoneNumber is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Email</mat-label>
+                <input type="email" [(ngModel)]="business.email" matInput formControlName="email"
+                    placeholder="Enter designation here" />
+                <mat-error *ngIf="businessForm.get('email')?.errors?.['required']">
+                    email is required
+                </mat-error>
+            </mat-form-field>
+
+
+
+            <!-- <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+                   <button mat-raised-button type="submit" color="primary">Submit</button>
+     
+               </div> -->
+        </form>
+
+    </div>
+    <div style="width:70vw; margin: auto;">
+        <div class="result-container">
+            <div class="motivity-container">
+                <img src="https://media.licdn.com/dms/image/C4D0BAQG3peVnCVX-HQ/company-logo_200_200/0/1596026318785?e=2147483647&v=beta&t=wDUBXdH0MTyskcXQmom985FkSxSeMj8YsXPPUGMEJMY"
+                    class="image" />
+                <h2>{{business.companyName}}<span>labs</span></h2>
+                <p class="tagline">{{business.tagline}}</p>
+
+                <h3 class="name">{{business.name}}</h3>
+                <p class="designation">{{business.designation}}</p>
+                <p class="phone-number">+91 {{business.phoneNumber}}</p>
+                <p class="email">{{business.email}} </p>
+                <button class="btn">WWW.motivitylabs.com</button>
+
+            </div>
+
+           
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button  (click)="onDownload()">download</button>
+        </div>
+    </div>
+
+</div>

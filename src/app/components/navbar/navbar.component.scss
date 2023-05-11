@@ -1,0 +1,17 @@
+$mycolor : rgb(101, 101, 225);
+@mixin activeStyle {
+    background-color: $mycolor;
+    padding: 10px;
+    border-radius: 16px;
+    color: #ffffff;
+    margin: 1rem;
+};
+
+.mat-mdc-button:not(:disabled).active {
+    // @include activeStyle()
+    background-color: $mycolor;
+    padding: 10px;
+    border-radius: 16px;
+    color: #ffffff;
+    margin: 1rem;
+  }/*# sourceMappingURL=navbar.component.css.map */

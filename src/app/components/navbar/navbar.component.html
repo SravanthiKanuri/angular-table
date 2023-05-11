@@ -1,0 +1,25 @@
+
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>menu</mat-icon> 
+   </button>
+  
+</div>
+<div>
+   <span class="example-spacer"></span>
+   <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]={exact:true} mat-button class="home-link favorite-icon" aria-label="Example icon-button with heart icon">
+     Home {{count}}
+   </button>
+  
+  <button routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]={exact:true} mat-button class="login-link" aria-label="Example icon-button with share icon">
+    Todo
+  </button>
+   <button routerLink="/card" routerLinkActive="active" [routerLinkActiveOptions]={exact:true} mat-button class="todo-link" aria-label="Example icon-button with share icon">
+    Card
+  </button>
+  <button routerLink="/formPage" routerLinkActive="active" [routerLinkActiveOptions]={exact:true} mat-button class="todo-link" aria-label="Example icon-button with share icon">
+    FormPage
+  </button>
+</div>
+ </mat-toolbar>
